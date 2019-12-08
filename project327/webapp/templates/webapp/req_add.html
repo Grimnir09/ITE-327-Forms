@@ -1,0 +1,106 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+
+<div class="container p-1">
+
+    <h2>Job Requisition</h2>
+    <hr>
+
+    <hr> {% if form.errors %}
+    <div class="alert alert-dismissible alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Form Error</strong>
+        <p class=".text-black"> Form is invalid, please check error(s) below.</p>
+        <div class="container p-1">
+            {{form.errors}}
+        </div>
+    </div>
+
+    {% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-row">
+        <div class="form-group col-md">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md">
+            <input type="Text" class="form-control" name="clientName" placeholder="Client Name" required>
+        </div>
+
+        <div class="form-group col-md">
+            <input type="Text" class="form-control" name="clientJobTitle" placeholder="Client Job Title" required>
+        </div>
+
+        <div class="form-group col-md">
+            <input type="Text" class="form-control" name="clientTelephone" placeholder="Client Telephone" required>
+        </div>  
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md">
+            <input type="Text" class="form-control" name="clientAddress" placeholder="Client Address" required>
+        </div> 
+
+    </div>
+        <div class="form-row">
+            <div class="form-group col-md">
+            <input type="Text" class="form-control" name="clientContact" placeholder="Contact Name" required>
+        </div>    
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md">
+            <textarea class="form-control" name="skillRequired" cols="30" rows="10" placeholder="Skills Required" required></textarea>
+        </div>    
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md">
+            <input type="text" class="form-control" name="educationLevel" placeholder="Education Level Required" required>
+        </div>
+    </div>
+
+    <div class="form-row">
+            <label class="col-2">Expected Start Date</label>
+            <div class="form-group col-md">
+                <input type="date" name="startDate" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <label class="col-2">Expected End Date</label>
+            <div class="form-group col-md">
+                <input type="date" name="endDate" class="form-control" required>
+            </div>
+        </div>
+
+
+        <div class="form-row">
+            <div class="form-group col-md">
+                <input type="number" class="form-control" name="daysNeeded" placeholder="Days Needed Complete Job" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md">
+                <input type="number" class="form-control" name="dailyHours" placeholder="Daily Hours" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md">
+                <input type="number" class="form-control" step=".01" name="dailyRate" placeholder="Daily Rate" required>
+            </div>
+        </div>
+
+    <hr>
+    
+    <button class="btn-block btn-lg btn-primary">Submit</button>
+</form>
+</div>
+
+{% endblock content %}

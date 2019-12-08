@@ -1,0 +1,12 @@
+*.pyc
+*~
+*.sqlite
+*.sqlite3
+*.code-workspace
+/tmp
+/.vscode
+__pycache__
+myvenv
+/static
+.DS_Store
+/virtualenvironment
